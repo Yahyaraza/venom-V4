@@ -85,11 +85,11 @@ async def genkey(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
                 save_keys()
                 response = f"Key generated: {key}\nExpires on: {expiration_date}"
             except ValueError:
-                response = f"Please specify a valid number and unit of time (hours/days) script by OWNER- @{OWNER_USERNAME}..."
+                response = f"Please specify a valid number and unit of time (hours/days) script by OWNER- @NOOBLOWNER..."
         else:
             response = "Usage: /genkey <amount> <hours/days>"
     else:
-        response = f"ONLY OWNER CAN USE💀OWNER OWNER- @{OWNER_USERNAME}..."
+        response = f"ONLY OWNER CAN USE💀OWNER OWNER- @NOOBLOWNER..."
 
     await update.message.reply_text(response)
 
@@ -110,11 +110,11 @@ async def redeem(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             save_users()
             del keys[key]
             save_keys()
-            response = f"✅Key redeemed successfully! Access granted until: {users[user_id]} OWNER- @{OWNER_USERNAME}..."
+            response = f"✅Key redeemed successfully! Access granted until: {users[user_id]} OWNER- @NOOBLOWNER..."
         else:
-            response = f"Invalid or expired key buy from OWNER- @{OWNER_USERNAME}..."
+            response = f"Invalid or expired key buy from OWNER- @NOOBLOWNER..."
     else:
-        response = f"Usage: /redeem <key> if you don't  have  buy from  @{OWNER_USERNAME}..."
+        response = f"Usage: /redeem krle key if you don't  have  buy from  @NOOBLOWNER..."
 
     await update.message.reply_text(response)
 
@@ -132,9 +132,9 @@ async def allusers(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
                 except Exception:
                     response += f"- User ID: {user_id} expires on {expiration_date}\n"
         else:
-            response = f"No data found OWNER- @{OWNER_USERNAME}..."
+            response = f"No data found OWNER- @NOOBLOWNER..."
     else:
-        response = f"ONLY OWNER CAN USE.OWNER- @{OWNER_USERNAME}..."
+        response = YE KRNE KI TERI AUKAAT NHI HAI BACHE ONLY OWNER CAN USE.OWNER- @NOOBLOWNER..."
     await update.message.reply_text(response)
 
 
@@ -143,7 +143,7 @@ async def bgmi(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_id = str(update.message.from_user.id)
 
     if user_id not in users or datetime.datetime.now() > datetime.datetime.strptime(users[user_id], '%Y-%m-%d %H:%M:%S'):
-        await update.message.reply_text("❌ Access expired or unauthorized. Please redeem a valid key.")
+        await update.message.reply_text("❌ Access expired VALID KEY DAAL GANDU.")
         return
 
     if len(context.args) != 3:
@@ -183,7 +183,7 @@ async def stop(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_id = str(update.message.from_user.id)
 
     if user_id not in users or datetime.datetime.now() > datetime.datetime.strptime(users[user_id], '%Y-%m-%d %H:%M:%S'):
-        await update.message.reply_text("❌ Access expired or unauthorized. Please redeem a valid key.")
+        await update.message.reply_text("❌ Access expired valid key daal gandu .")
         return
 
     if flooding_process is None:
